@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/eduardonakaidev/go-restaurant/controller"
+	"github.com/eduardonakaidev/go-restaurant/app/controller"
 	"github.com/gofiber/fiber/v2"
 )
 
