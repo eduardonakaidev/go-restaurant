@@ -12,7 +12,6 @@ func MainHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		return
 	}
-	// fmt.Fprintf(w, "Hello, you've requested: %s\n", r.URL.Path)
 }
 
 func main() {
