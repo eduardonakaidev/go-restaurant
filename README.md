@@ -18,4 +18,4 @@ check if the project container is running without errors
  ```bash
 docker ps
 ```
-### If you follow all the steps successfully, your application will be running on port 5050
+**If you follow all the steps successfully, your application will be running on port 5050**
