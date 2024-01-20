@@ -35,3 +35,11 @@ clean_on_exit = false
 
 [screen]
 clear_on_rebuild = false
+[api]
+port = "5050"
+
+[database]
+host = "golang_pgsql"
+user = "golang"
+pass = "golang"
+name = "golang"

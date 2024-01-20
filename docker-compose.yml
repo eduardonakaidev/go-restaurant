@@ -12,19 +12,35 @@ services:
     networks:
       - golang
 
-  # postgres:
-  #   image: postgres:13-alpine
-  #   container_name: golang_pgsql
-  #   restart: always
-  #   ports:
-  #     - "5432:5432"
-  #   networks:
-  #     - golang
-  #   volumes:
-  #     - ./docker/pgsql/data:/var/lib/postgresql/data
-  #   environment:
-  #     POSTGRES_PASSWORD: golang
+  postgres:
+    image: postgres:13-alpine
+    container_name: golang_pgsql
+    restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      - golang
+    volumes:
+      - ./docker/pgsql/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: golang
+      POSTGRES_USER: golang
+      POSTGRES_DB: golang
 
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: golang_pgadmin
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=dev@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=dev123
+    networks:
+      - golang
+    ports:
+      - 8083:80
 networks:
   golang:
-    
+
+
