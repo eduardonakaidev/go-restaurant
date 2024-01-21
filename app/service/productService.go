@@ -11,9 +11,7 @@ import (
 func CreateProduct(product models.Product) (models.Product, error) {
 	product.ID = utils.NewUUID()
 	product.CreatedAt = time.Now()
-	if err := connection.DB.Create(&product).Error; err != nil {
-		return product, err
-	}
+	if err := connection.DB.QueryRow()
 	return product, nil
 }
 
@@ -27,9 +25,7 @@ func GetProducts() ([]models.Product, error) {
 
 func GetProductById(id string) (models.Product, error) {
 	var product models.Product
-	if err := connection.DB.Where("id = ?", id).First(&product).Error; err != nil {
-		return product, err
-	}
+	if err := connection.DB.QueryRow()
 	return product, nil
 }
 

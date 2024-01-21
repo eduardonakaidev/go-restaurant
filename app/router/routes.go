@@ -9,7 +9,6 @@ func HandleRequest() {
 	r := gin.Default()
 	api := r.Group("/api")
 	{
-		api.GET("/ping", controller.Ping)
 		product := api.Group("/product")
 		{
 			product.POST("/", controller.CreateProduct)

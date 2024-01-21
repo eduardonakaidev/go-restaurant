@@ -1,9 +1,22 @@
 package models
 
 type User struct {
-	ID            string `gorm:"type:varchar(255);primary_key" json:"id"`
-	Name          string `gorm:"type:varchar(255)" json:"name" validate:"required"`
-	Email         string `gorm:"type:varchar(255)" json:"email" validate:"required"`
-	Password_hash string `gorm:"type:varchar(255)" json:"password" validate:"required"`
-	Role          string `gorm:"type:varchar(255)" json:"role" validate:"required"`
+	ID            string `json:"id"`
+	Name          string `json:"name" validate:"required"`
+	Email         string `json:"email" validate:"required"`
+	Password_hash string `json:"password" validate:"required"`
+	Role          string `json:"role" validate:"required"`
+}
+
+// ALTER TABLE
+//     "service" ADD PRIMARY KEY("id");
+// CREATE TABLE "user"(
+//     "id" UUID NOT NULL,
+//     "name" VARCHAR(255) NOT NULL,
+//     "email" VARCHAR(255) NOT NULL,
+//     "password_hash" VARCHAR(255) NOT NULL,
+//     "role" VARCHAR(255) NOT NULL
+// );
+func ValidateUser(user *User) error {
+	return validate.Struct(user)
 }
