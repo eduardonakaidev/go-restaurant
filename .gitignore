@@ -1,5 +1,4 @@
 /postgres-data
-.env
 /uploads
 air.toml
 /tmp
