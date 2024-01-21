@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/eduardonakaidev/go-restaurant/app/controller"
+	"github.com/eduardonakaidev/go-restaurant/controller"
 )
 
 func HandleRequest() {
@@ -15,8 +15,8 @@ func HandleRequest() {
 			product.POST("/", controller.CreateProduct)
 			product.GET("/", controller.GetProducts)
 			product.GET("/:id", controller.GetProductById)
-			product.PUT("/", controller.UpdateProduct)
-			product.DELETE("/", controller.DeleteProduct)
+			product.PUT("/:id", controller.UpdateProduct)
+			product.DELETE("/:id", controller.DeleteProduct)
 		}
 	}
 	r.Run(":5050")

@@ -5,7 +5,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/eduardonakaidev/go-restaurant/app/models"
+	"github.com/eduardonakaidev/go-restaurant/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

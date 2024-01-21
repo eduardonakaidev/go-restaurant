@@ -1,13 +1,16 @@
 package service
 
 import (
-	"github.com/eduardonakaidev/go-restaurant/app/connection"
-	"github.com/eduardonakaidev/go-restaurant/app/models"
-	"github.com/eduardonakaidev/go-restaurant/app/utils"
+	"time"
+
+	"github.com/eduardonakaidev/go-restaurant/connection"
+	"github.com/eduardonakaidev/go-restaurant/models"
+	"github.com/eduardonakaidev/go-restaurant/utils"
 )
 
 func CreateProduct(product models.Product) (models.Product, error) {
 	product.ID = utils.NewUUID()
+	product.CreatedAt = time.Now()
 	if err := connection.DB.Create(&product).Error; err != nil {
 		return product, err
 	}
