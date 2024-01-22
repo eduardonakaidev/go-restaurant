@@ -11,7 +11,7 @@ type Service struct {
 	Date         time.Time `json:"date"`
 	IsActive     bool      `json:"isActive"  validate:"required"`
 	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt    time.Time `json:"updated_at"`
+	UpdatedAt   *time.Time `json:"updated_at"`
 }
 
 // ALTER TABLE

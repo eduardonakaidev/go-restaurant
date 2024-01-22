@@ -15,10 +15,6 @@ type Reservation struct {
 	IsActiveNow       bool      `json:"isactivenow"  validate:"required"`
 }
 
-// ALTER TABLE
-//
-//	"user" ADD PRIMARY KEY("id");
-//
 // CREATE TABLE "reservation"(
 //
 //	"id" UUID NOT NULL,
