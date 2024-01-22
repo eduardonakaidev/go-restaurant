@@ -12,10 +12,7 @@ func HandleRequest() {
 		product := api.Group("/product")
 		{
 			product.POST("/", controller.CreateProduct)
-			product.GET("/", controller.GetProducts)
-			product.GET("/:id", controller.GetProductById)
-			product.PUT("/:id", controller.UpdateProduct)
-			product.DELETE("/:id", controller.DeleteProduct)
+			product.GET("/:id",controller.GetProductById)
 		}
 	}
 	r.Run(":5050")
