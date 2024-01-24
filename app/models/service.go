@@ -1,9 +1,13 @@
 package models
 
-import "time"
+import (
+	"time"
+
+	"github.com/google/uuid"
+)
 
 type Service struct {
-	ID           string    ` json:"id"`
+	ID           uuid.UUID ` json:"id"`
 	Name         string    `json:"name" validate:"required"`
 	Description  string    `json:"description" `
 	PriceInCents int64     `json:"priceincents" validate:"required"`
@@ -11,7 +15,7 @@ type Service struct {
 	Date         time.Time `json:"date"`
 	IsActive     bool      `json:"isActive"  validate:"required"`
 	CreatedAt    time.Time `json:"created_at"`
-	UpdatedAt   *time.Time `json:"updated_at"`
+	UpdatedAt    time.Time `json:"updated_at"`
 }
 
 // ALTER TABLE

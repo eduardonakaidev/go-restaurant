@@ -13,6 +13,9 @@ func HandleRequest() {
 		{
 			product.POST("/", controller.CreateProduct)
 			product.GET("/:id",controller.GetProductById)
+			product.GET("/",controller.ListProduct)
+			product.PUT("/:id",controller.Update)
+			product.DELETE("/:id", controller.DeleteProductController)
 		}
 	}
 	r.Run(":5050")

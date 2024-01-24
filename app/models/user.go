@@ -1,7 +1,9 @@
 package models
 
+import "github.com/google/uuid"
+
 type User struct {
-	ID            string `json:"id"`
+	ID            uuid.UUID `json:"id"`
 	Name          string `json:"name" validate:"required"`
 	Email         string `json:"email" validate:"required"`
 	Password_hash string `json:"password" validate:"required"`

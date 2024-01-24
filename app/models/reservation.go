@@ -2,10 +2,12 @@ package models
 
 import (
 	"time"
+
+	"github.com/google/uuid"
 )
 
 type Reservation struct {
-	ID                string    `json:"id"`
+	ID                uuid.UUID    `json:"id"`
 	CreatedAt         time.Time `json:"created_at"`
 	DateOfReservation time.Time `json:"dateofreservation"  validate:"required"`
 	ReservedId        string    `json:"reservedid" validate:"required"`

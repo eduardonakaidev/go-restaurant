@@ -35,7 +35,7 @@ func ConnectPostgresDB()(*sql.DB, error) {
 		  "priceInCents" INTEGER NOT NULL,
 		  "stock" INTEGER NOT NULL,
 		  "createdAt" DATE NOT NULL,
-		  "updatedAt" DATE NULL,
+		  "updatedAt" DATE NOT NULL,
 		  "isActive" BOOLEAN NOT NULL,
 		  PRIMARY KEY("id")
 	  );

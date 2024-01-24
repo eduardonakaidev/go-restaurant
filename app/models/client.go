@@ -1,9 +1,14 @@
 package models
 
-import "time"
+import (
+	"time"
+
+	"github.com/google/uuid"
+)
+// product representa um Client no banco de dados
 
 type Client struct {
-	ID            string    `json:"id"`
+	ID            uuid.UUID `json:"id"`
 	Name          string    `json:"name" validate:"required"`
 	Phone         int64     `json:"fone" validate:"required"`
 	CreditInCents int64     `json:"creditincents" validate:"required"`
